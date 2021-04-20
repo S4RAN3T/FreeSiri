@@ -1,0 +1,64 @@
+  <style>
+
+    #data-draggable{
+      position: absolute;
+      z-index: 9;
+      background-color: #f1f1f1;
+      text-align: center;
+      border: 1px solid #d3d3d3;
+    }
+
+    #data-draggable-header{
+      padding: 10px;
+      cursor: move;
+      z-index: 10;
+      background-color: brown;
+      color: #fff;
+    }
+  </style>
+  </head>
+  <body>
+    <div id="data-draggable">
+      <div id="data-draggable-header">click here to move</div>
+      <p>move</p>
+      <p>this</p>
+      <p>DIV</p>
+    </div>
+
+    <script>
+      dragElement(document.getElementById("data-draggable"));
+
+        function dragElement(elemnt){
+          var pos1=0, pos2=0, pos=0, pos=0;
+          if(document.getElementById(elemnt.id+ "header")){
+            document.getElementById(elemnt.id + "header").onmousedown = dragMouseDown;
+          }
+          else{elemnt.onmousedown = dragMouseDown;
+          }
+          function dragMouseDown(e){
+            e = e || window.event;
+            e.preventDefault();
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            document.onmousemove = elementDrag;
+          }
+          function elementDrag(e){
+            e = e || window.event;
+            e.preventDefault();
+
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+
+            elemnt.style.top = (elemnt.offsetTop - pos2) + "px";
+            elemnt.style.left = (elemnt.offsetLeft - pos1) + "px";
+          }
+          function closeDragElement(){
+            document.onmouseup = null;
+            document.onmousemove = null;
+          }
+        }
+    </script>
+  </body>

@@ -1,0 +1,93 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.slide{
+  width: 400vw;
+  height: 100vh;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: row;
+  width: 5200vw;
+  transform: rotate(90deg) translateY(-100vh);
+  transform-origin: top left;
+}
+
+.one{
+  background: #767676;
+}
+
+/* seamless image example
+.one {
+  background: url("bkg2.png");
+  background-size: auto 100vh;
+  background-repeat: repeat-x;
+  width: 400vw;
+*/
+
+.two{
+  background: #6c6c6c;
+}
+
+.three{
+  background: #636363;
+}
+
+.four{
+  background: #595959;
+}
+
+.five{
+  background: #4f4f4f;
+}
+
+.six{
+  background: #454545;
+}
+
+.seven{
+  background: #3b3b3b;
+}
+
+.eight{
+  background: #323232;
+}
+
+.nine{
+  background: #282828;
+}
+
+.ten{
+  background: #1e1e1e;
+}
+
+.eleven{
+  background: #141414;
+}
+
+.twelve{
+  background: #0a0a0a;
+}
+
+.thirteen{
+  background: #000;
+}
+
+.outer-wrapper{
+  width: 100vh;
+  height: 100vw;
+  transform: rotate(-90deg) translateX(-100vh);
+  transform-origin: top left;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
